@@ -254,7 +254,7 @@ gboolean janus_json_is_valid(json_t *val, json_type jtype, unsigned int flags);
 			JANUS_VALIDATE_JSON_OBJECT(obj, secret_parameters, error_code, error_cause, TRUE, missing_code, invalid_code); \
 			if(error_code == 0 && !janus_strcmp_const_time((secret), json_string_value(json_object_get(obj, member)))) { \
 				error_code = (unauthorized_code); \
-				JANUS_LOG(LOG_ERR, "Unauthorized (wrong %s)\n", member); \
+				JANUS_LOG(LOG_ERR, "Unauthorized (wrong %s) Actual Secret %s \n", member, secret); \
 				if(error_cause != NULL) \
 					g_snprintf(error_cause, sizeof(error_cause), "Unauthorized (wrong %s)", member); \
 			} \
