@@ -1009,7 +1009,7 @@ void janus_dtls_callback(const SSL *ssl, int where, int ret) {
 		return;
 	}
 	JANUS_LOG(LOG_VERB, "[%"SCNu64"] DTLS alert triggered on stream %u (component %u), closing...\n", handle->handle_id, stream->stream_id, component->component_id);
-	janus_ice_webrtc_hangup(handle, "DTLS alert");
+	//janus_ice_webrtc_hangup(handle, "DTLS alert");
 }
 
 /* DTLS certificate verification callback */
